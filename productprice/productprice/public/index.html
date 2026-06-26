@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>澳洲电商比价 · JB Hi-Fi / The Good Guys / Harvey Norman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">实时价格对比</p>
+        <h1>澳洲三大电商<br />同款商品比价</h1>
+        <p class="subtitle">
+          同时搜索
+          <a href="https://www.jbhifi.com.au/" target="_blank" rel="noopener">JB Hi-Fi</a>、
+          <a href="https://www.thegoodguys.com.au/" target="_blank" rel="noopener">The Good Guys</a>、
+          <a href="https://www.harveynorman.com.au/" target="_blank" rel="noopener">Harvey Norman</a>
+          ，找出最低价。
+        </p>
+
+        <form id="search-form" class="search-bar" autocomplete="off">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="输入商品名称或型号，例如 Bose QuietComfort、Samsung Galaxy S26"
+            required
+          />
+          <button type="submit" id="search-btn">搜索比价</button>
+        </form>
+
+        <div class="quick-tags">
+          <span>热门搜索：</span>
+          <button type="button" class="tag" data-q="Bose QuietComfort">Bose QuietComfort</button>
+          <button type="button" class="tag" data-q="Samsung Galaxy S26">Galaxy S26</button>
+          <button type="button" class="tag" data-q="LG OLED TV">LG OLED TV</button>
+          <button type="button" class="tag" data-q="Dyson V15">Dyson V15</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="status" class="status hidden"></section>
+
+      <section id="summary" class="summary hidden"></section>
+
+      <section id="store-status" class="store-status hidden"></section>
+
+      <section id="results" class="results hidden">
+        <div class="results-head">
+          <h2>比价结果</h2>
+          <p id="results-meta"></p>
+        </div>
+        <div id="comparison-list" class="comparison-list"></div>
+      </section>
+
+      <section id="empty" class="empty hidden">
+        <h2>开始搜索</h2>
+        <p>输入商品关键词，系统会实时抓取三家网站的价格并进行智能匹配对比。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>价格数据来自各零售商公开页面，仅供参考。抓取结果受网站防护策略影响，建议在本地网络环境运行本工具。</p>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
