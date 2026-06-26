@@ -29,6 +29,8 @@ git push -u origin main
 | **Build output directory** | `public` |
 | **Root directory** | 留空（代码在仓库根目录时） |
 
+Cloudflare 会自动读取仓库根目录的 **`wrangler.toml`**（已包含 `nodejs_compat`）。
+
 保存后点 **Retry deployment**。
 
 ---

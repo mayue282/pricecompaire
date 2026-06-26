@@ -1,5 +1,4 @@
 import { BROWSER_HEADERS, fetchText, isBlockedHtml, withTimeout } from './utils.mjs';
-import { fetchWithBrowser } from './browser.mjs';
 import { parseHarveynormanHtml } from './parse-harveynorman-html.mjs';
 
 const BASE = 'https://www.harveynorman.com.au';
@@ -23,12 +22,12 @@ async function loadSearchHtml(query) {
     throw new Error('fetch-blocked');
   }
 
+  const { fetchWithBrowser } = await import('./browser-node.mjs');
   const html = await withTimeout(
     fetchWithBrowser(url, { waitMs: 15000 }),
     BROWSER_TIMEOUT_MS,
     'Harvey Norman browser'
   );
-
   if (isBlockedHtml(html)) {
     throw new Error('browser-blocked');
   }

@@ -1,6 +1,5 @@
 import { searchGoodguysConstructor } from './constructor-tgg.mjs';
 import { BROWSER_HEADERS, fetchText, isBlockedHtml, withTimeout } from './utils.mjs';
-import { fetchWithBrowser } from './browser.mjs';
 import { parseGoodguysHtml } from './parse-goodguys-html.mjs';
 
 const USE_BROWSER_FALLBACK = process.env.TGG_USE_BROWSER === '1';
@@ -22,6 +21,7 @@ function normalizeProducts(products) {
 }
 
 async function searchViaBrowser(query) {
+  const { fetchWithBrowser } = await import('./browser-node.mjs');
   const url = `${BASE}/search?q=${encodeURIComponent(query)}`;
   const html = await withTimeout(
     fetchWithBrowser(url, { waitMs: 20000 }),
