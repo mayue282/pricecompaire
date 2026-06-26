@@ -1,0 +1,15 @@
+{
+  "name": "productprice",
+  "version": "1.0.0",
+  "description": "Compare product prices across JB Hi-Fi, The Good Guys, and Harvey Norman",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "tunnel": "powershell -ExecutionPolicy Bypass -File deploy/start-tunnel.ps1",
+    "push-github": "powershell -ExecutionPolicy Bypass -File deploy/push-github.ps1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
