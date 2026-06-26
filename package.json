@@ -7,9 +7,14 @@
     "start": "node server.mjs",
     "dev": "node server.mjs",
     "tunnel": "powershell -ExecutionPolicy Bypass -File deploy/start-tunnel.ps1",
-    "push-github": "powershell -ExecutionPolicy Bypass -File deploy/push-github.ps1"
+    "push-github": "powershell -ExecutionPolicy Bypass -File deploy/push-github.ps1",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "wrangler": "^4.105.0"
   }
 }
